@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile":"",
-    "watch":"webpack --watch",
-    "start": "webpack-dev-server "
-    
+    "start": "webpack-dev-server --hot --progress --colors",
+    "build": "webpack --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -29,7 +27,22 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.17.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-react-transform": "^3.0.0",
+    "express": "^4.16.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.76.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.20.0"
   }
 }

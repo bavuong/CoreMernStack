@@ -1,0 +1,1 @@
+require('style!css!semantic-ui-css/semantic.min.css');

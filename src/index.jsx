@@ -1,36 +1,31 @@
+// index.js
+
 import React from 'react';
-import { render } from 'react-dom';
-import Message from './Hello.jsx';
+import ReactDOM from 'react-dom';
+import {BrowserRouter , BrowserRouter as Router, Route } from 'react-router-dom';
 
-class App extends React.Component {
- 
- constructor (props){
-     super(props)
-     this.state = {
-         name:'boyka',
-         fullName:'Bá Vương'
-        }
- }
-  onChange(e)
-  {
-      this.setState({name:e.target.value});
-  
-  }
-  changeFullName(e)
-  {
-    this.setState({fullName:e.target.value});
-  }
-    render() {
-    return (
+import App from './App';
+// import AddItem from './components/AddItem';
+// import Hello from './Hello';
+
+import main from './app/main'
+import AddItem from './components/AddItem';
+import IndexItem from './components/IndexItem';
+import EditItem from './components/EditItem';
+import index from './home/index';
+import view from './components/view'
+ReactDOM.render(
+  <Router >
       <div>
-      <input type='text'onChange={this.onChange.bind(this)} />
-      <input type='text'onChange={this.changeFullName.bind(this)} />
-      <Message name={this.state.name} fullName ={this.state.fullName}/>
+     
+        <Route exact path='/' component={main} />
+        <Route path='#/add-item' component={AddItem} />
+        
+        <Route path='/add-item' component={AddItem} />
+        <Route path='/index' component={IndexItem} />
+        <Route path='/view' component={view} />
       </div>
-    );
-  }
-}
-//app.js
-
-console.log('run react js');
-render(<App />, document.getElementById('app'));
+  </Router>,
+ 
+  document.getElementById('root')
+);
